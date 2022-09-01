@@ -1433,7 +1433,30 @@ Request body the request body contains data with the following structure:
     "to": "+19857473632", 
     "contactId":"q3f5b438-xw31-44af-b729-64swaf3d0b56",
     "message":"hello!Leon"
-    "callbackURL":"https://domainname.com/callback/"
+    "callbackURL":"https://domainname.com/callback/",
+    "email": {
+    "to": [
+      "thomas@comm100.com"
+    ],
+    "cc": [
+      "john@comm100.com"
+    ],
+    "bcc": [
+      "lee@comm100.com"
+    ],
+    "ishtmlMessage": false,
+    "reference": "xxxxxxxx",
+    "subject": "Comm100 Campaign",
+    
+  },
+  "attachments": [
+    {
+      "url": "https://google.com/triangle_full.jpg",
+      "type": "image",
+      "name": "myimage",
+      "size": "1024"
+    }
+  ],
   } 
 ```
 
