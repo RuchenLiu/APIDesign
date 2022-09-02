@@ -1737,9 +1737,9 @@ Outbound Message is represented as simple flat JSON objects with the following k
   | `to` | string[] | no | List of secondary recipients . |
   | `cc` | string[] | no | List of cc email . |
   | `bcc` | string[] | no | List of bcc email . |
-  | `ishtmlMessage` | bool | yes | Whether message html or not. | 
+  | `ishtmlMessage` | bool | no | Whether message html or not. Note: Default value will be true | 
   | `reference` | string | no | Refernce key for outreach service. Note(will used to check any ticket is already exist or not) |
-  | `subject` | string | yes | Subject of the email message. |
+  | `subject` | string | no | Subject of the email message. |
   
  ### Attachment Object
 Attachment Object is represented as simple flat JSON objects with the following keys:
