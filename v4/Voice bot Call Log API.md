@@ -62,7 +62,10 @@ Response:
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingPaused"},
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingResumed"},
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingStopped"},
-                              {"role":"visitor","name":"+18448586997","time":"00:00:15.3423523","text":"1234","type":"dtmf"}]
+                              {"role":"visitor","name":"+18448586997","time":"00:00:15.3423523","text":"1234","type":"dtmf"}],
+            "isSentimentAnalysisEnabled": "true",
+            "veryNegativeMessages": 2,
+            "negativeMessages":10,   
         }
     ],
     "nextPage": null,
@@ -116,7 +119,10 @@ Response:
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingPaused"},
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingResumed"},
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingStopped"},
-                              {"role":"visitor","name":"+18448586997","time":"00:00:15.3423523","text":"1234","type":"dtmf"}]
+                              {"role":"visitor","name":"+18448586997","time":"00:00:15.3423523","text":"1234","type":"dtmf"}],
+            "isSentimentAnalysisEnabled": "true",
+            "veryNegativeMessages": 2,
+            "negativeMessages":10,   
         }
   ```
 
@@ -171,7 +177,10 @@ Response:
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingPaused"},
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingResumed"},
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingStopped"},
-                              {"role":"visitor","name":"+18448586997","time":"00:00:15.3423523","text":"1234","type":"dtmf"}]
+                              {"role":"visitor","name":"+18448586997","time":"00:00:15.3423523","text":"1234","type":"dtmf"}],
+            "isSentimentAnalysisEnabled": "true",
+            "veryNegativeMessages": 2,
+            "negativeMessages":10,   
         }
     ],
     "nextPage": null,
@@ -230,7 +239,10 @@ Response:
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingPaused"},
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingResumed"},
                               {"role":"system","name":"","time":"00:00:15.3423523","text":"","type":"recordingStopped"},
-                              {"role":"visitor","name":"+18448586997","time":"00:00:15.3423523","text":"1234","type":"dtmf"}]
+                              {"role":"visitor","name":"+18448586997","time":"00:00:15.3423523","text":"1234","type":"dtmf"}],
+            "isSentimentAnalysisEnabled": "true",
+            "veryNegativeMessages": 2,
+            "negativeMessages":10,              
         }
   ```
 
@@ -251,7 +263,9 @@ VoiceBot Call Log is represented as simple flat JSON objects with the following 
 |`transferredTo`|string|Id of the Voicebot Call Log.|
 |`recordingFileURL`|string|The recording file will be compressed into MP3 format to save space, and uploaded to the S3 storage server of AWS, and the URL will be saved in the field.|
 |`transcript`|[TextRecord](#voicebot-text-record-object)[]|JSON format. The text record list of this call, including the content, the start time, and the speaker of each sentence.|
-
+|`isSentimentAnalysisEnabled`|bool|It shows if sentiment analysis is enabled for the call.|
+|`veryNegativeMessages`|int| The number of caller messages whose sentiment is very negative. |
+|`negativeMessages`|int| The number of caller messages whose sentiment is negative. |
 ### VoiceBot Text Record Json Format
 VoiceBot Call Log is represented as simple flat JSON objects with the following keys:
 |Name|Type|Description|
