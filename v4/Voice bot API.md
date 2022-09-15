@@ -669,12 +669,13 @@ Response
   | - | - | :-: | - | 
   | `id` | Guid  | | |
   | `content`  |  [VoiceBotAction](#voicebotaction-object)[]    |  |
-
+  | `sentiment`  |enum   |  sentiment status `veryPositive`, `positive`, `normal`, `negative`，`veryNative`. |
 ## VoicebotAction Object 
   |Name| Type| Default | Description     | 
   | - | - | :-: | - | 
   | `type` | string | | type of the response,including `PlayAudio`,`PlayText`,`CollectDTMFDigits`,`CollectSpeechResponse`,`IVRMenu`,`TransferCall`, `EndCall`|
-  | `content` | object | |  response's content. when type is `PlayAudio`, it represents [PlayAudio](#playaudio-object); when type is `PlayText`,it represents [PlayText](#playtext-object);when type is `CollectDTMFDigits`,it represents [CollectDTMFDigits](#collectdtmfdigits-object); when type is `CollectSpeechResponse`, it represents [CollectSpeechResponse](#collectspeechresponse-object);when type is `EndCall`, it represents [EndCall](#endcall-object);when type is `IVRMenu`, it represents [IVRMenu](#ivrmenu-object);when type is `TransferCall`, it represents [TransferCall](#transfercall-object);|
+  | `content` | object | |  response's content. when type is `PlayAudio`, it represents [PlayAudio](#playaudio-object); when type is `PlayText`,it represents [PlayText](#playtext-object);when type is `CollectDTMFDigits`,it represents [CollectDTMFDigits](#collectdtmfdigits-object); when type is `CollectSpeechResponse`, it represents [CollectSpeechResponse](#collectspeechresponse-object);when type is `EndCall`, it represents [EndCall](#endcall-object);when type is `IVRMenu`, it represents [IVRMenu](#ivrmenu-object);when type is `TransferCall`, it represents [TransferCall](#transfercall-object);;when type is `
+ChangeLanguage`, it represents [ChangeLanguage](#changelanguage-object);|
   
   ## VoiceAction Object 
   |Name| Type| Default | Description     | 
@@ -834,3 +835,9 @@ Configuration to set up audio encoder. The encoding determines the output audio 
   ## EndCallAction Object   
   |Name| Type | Default | Description | 
   | - | - | :-: | - | 
+  
+  ## ChangeLanguage Object
+    |Name| Type | Default | Description | 
+  | - | - | :-: | - | 
+  | `language` | String  | |Voice Bot’s supported language.  |
+  | `voice` | String  | |Voice Bot’s supported voice.  |
