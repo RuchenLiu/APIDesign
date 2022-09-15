@@ -837,7 +837,7 @@ Configuration to set up audio encoder. The encoding determines the output audio 
   | - | - | :-: | - | 
   
   ## ChangeLanguage Object
-    |Name| Type | Default | Description | 
+  |Name| Type | Default | Description | 
   | - | - | :-: | - | 
   | `language` | String  | |Voice Bot’s supported language.  |
   | `voice` | String  | |Voice Bot’s supported voice.  |
