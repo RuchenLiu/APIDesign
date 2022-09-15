@@ -669,7 +669,7 @@ Response
   | - | - | :-: | - | 
   | `id` | Guid  | | |
   | `content`  |  [VoiceBotAction](#voicebotaction-object)[]    |  |
-  | `sentiment`  |enum   |  sentiment status `veryPositive`, `positive`, `normal`, `negative`，`veryNative`. |
+  | `sentiment` |enum  | | sentiment status `veryPositive`, `positive`, `normal`, `negative`，`veryNative`. |
 ## VoicebotAction Object 
   |Name| Type| Default | Description     | 
   | - | - | :-: | - | 
