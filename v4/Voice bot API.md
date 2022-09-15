@@ -673,7 +673,7 @@ Response
 ## VoicebotAction Object 
   |Name| Type| Default | Description     | 
   | - | - | :-: | - | 
-  | `type` | string | | type of the response,including `PlayAudio`,`PlayText`,`CollectDTMFDigits`,`CollectSpeechResponse`,`IVRMenu`,`TransferCall`,`EndCall`,`StartRecording`,`StopRecording`,`PauseRecording`,'ResumeRecording',`CollectName`,`CollectCompanyName`,`CollectEmail`,`ChangeLanguage`|
+  | `type` | string | | type of the response,including `PlayAudio`,`PlayText`,`CollectDTMFDigits`,`CollectSpeechResponse`,`IVRMenu`,`TransferCall`,`EndCall`,`StartRecording`,`StopRecording`,`PauseRecording`,`ResumeRecording`,`CollectName`,`CollectCompanyName`,`CollectEmail`,`ChangeLanguage`|
   | `content` | object | |  response's content. when type is `PlayAudio`, it represents [PlayAudio](#playaudio-object); when type is `PlayText`,it represents [PlayText](#playtext-object);when type is `CollectDTMFDigits`,it represents [CollectDTMFDigits](#collectdtmfdigits-object); when type is `CollectSpeechResponse`, it represents [CollectSpeechResponse](#collectspeechresponse-object);when type is `EndCall`, it represents [EndCall](#endcall-object);when type is `IVRMenu`, it represents [IVRMenu](#ivrmenu-object);when type is `TransferCall`, it represents [TransferCall](#transfercall-object);when type is `StartRecording`, it represents [StartRecording](#startrecording-object);when type is `StopRecording`, it represents [StopRecording](#stoprecording-object);when type is `PauseRecording`, it represents [PauseRecording](#pauserecording-object);when type is `ResumeRecording`, it represents [ResumeRecording](#resumerecording-object);when type is `CollectName`, it represents [CollectName](#collectname-object);when type is `CollectCompanyName`, it represents [CollectCompanyName](#collectcompanyname-object);when type is `CollectEmail`, it represents [CollectEmail](#collectemail-object);when type is `ChangeLanguage`, it represents [ChangeLanguage](#changelanguage-object);|
   
   ## VoiceAction Object 
@@ -724,7 +724,58 @@ Response
 ## EndCall Object   
   |Name| Type | Default | Description | 
   | - | - | :-: | - | 
+  
+## StartRecording Object   
+  |Name| Type | Default | Description | 
+  | - | - | :-: | - | 
+  
+## StopRecording Object   
+  |Name| Type | Default | Description | 
+  | - | - | :-: | - |   
+  
+## PauseRecording Object   
+  |Name| Type | Default | Description | 
+  | - | - | :-: | - | 
+  
+## ResumeRecording Object   
+  |Name| Type | Default | Description | 
+  | - | - | :-: | - |   
 
+## CollectName Object    
+  Text Response is represented as simple flat json objects with the following keys: 
+  |Name| Type | Default | Description | 
+  | - | - | :-: | - | 
+  | `message` | String  | | String |
+  | `isSpellingCheckRequired` | bool | If need to check spelling. |
+  | `spellingCheckMessage` | String  | | Check spelling message.  |
+  | `spellingCheckMessageReplayKey` | String  | | The key to replay check spelling message.   |
+  | `spellingConfirmationKey` | String  | | The key to confirm spelling result.   |
+  | `spellingInputFinishKey` | String  | | The key to finish spelling.   |
+  | `spellingCheckRepeatTime` | int  | | The max repeat times to check spelling，if the maximum number of times is exceeded, it will fail.   |
+  
+## CollectCompanyName Object    
+  Text Response is represented as simple flat json objects with the following keys: 
+  |Name| Type | Default | Description | 
+  | - | - | :-: | - | 
+  | `message` | String  | | String |
+  | `isSpellingCheckRequired` | bool | If need to check spelling. |
+  | `spellingCheckMessage` | String  | | Check spelling message.  |
+  | `spellingCheckMessageReplayKey` | String  | | The key to replay check spelling message.   |
+  | `spellingConfirmationKey` | String  | | The key to confirm spelling result.   |
+  | `spellingInputFinishKey` | String  | | The key to finish spelling.   |
+  | `spellingCheckRepeatTime` | int  | | The max repeat times to check spelling，if the maximum number of times is exceeded, it will fail.   |  
+  
+## CollectEmail Object    
+  Text Response is represented as simple flat json objects with the following keys: 
+  |Name| Type | Default | Description | 
+  | - | - | :-: | - | 
+  | `message` | String  | | String |
+  | `isSpellingCheckRequired` | bool | If need to check spelling. |
+  | `spellingCheckMessage` | String  | | Check spelling message.  |
+  | `spellingCheckMessageReplayKey` | String  | | The key to replay check spelling message.   |
+  | `spellingConfirmationKey` | String  | | The key to confirm spelling result.   |
+  | `spellingInputFinishKey` | String  | | The key to finish spelling.   |
+  | `spellingCheckRepeatTime` | int  | | The max repeat times to check spelling，if the maximum number of times is exceeded, it will fail.   |  
 
 ## IVRMenu Object   
   |Name| Type | Default | Description | 
