@@ -781,6 +781,8 @@ Response
   |Name| Type | Default | Description | 
   | - | - | :-: | - | 
   | `message` | String  | | String  |
+  | `greetingType ` | String  | | Type of the greeting,including `PlayMessage`,`PlayAudio`.  |
+  | `audioPath ` | String  | | Thr url of audio.  |
 
 ## Visitor Object   
   |Name| Type | Default | Description | 
