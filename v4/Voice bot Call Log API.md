@@ -275,4 +275,4 @@ VoiceBot Call Log is represented as simple flat JSON objects with the following 
 |`text`|string|Record content.  when type is `text`,it represents text record content;when type is `dtmf`,it represents dtmf input;when type is `audio`, it represents audio name.|
 |`time`|time|start time.|
 |`type`|enum|Allowed values are `recordingStarted`, `recordingPaused`, `recordingResumed`, `recordingStopped`，`text`，`dtmf`,`audio`.|
-|`sentiment`|enum|sentiment status `unKnow`, `veryPositive`, `positive`, `Neutral`, `negative`，`veryNegative`.|
+|`sentiment`|enum|sentiment status `unKnow`, `veryPositive`, `positive`, `Neutral`,`negative`,`veryNegative`.|
