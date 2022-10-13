@@ -5,7 +5,8 @@
   ## Summary
   
   ### Two Factor Auth API
-    - POST /bot/2fa/secretkey - [Create a new 2FA secret key](#Create-a-new-secret-key).
-    - POST /bot/2fa/code:verify - [verify the 2FA code](#Verify-the-2FA-code).
-    - POST /bot/2fa/code - [Create the 2FA recovery code](#Create-the-2FA-recovery-code).
+- POST /bot/2fa/secretkey - [Create a new 2FA secret key](#create-a-new-secret-key).
+- POST /bot/2fa/code:verify - [verify the 2FA code](#verify-the-2FA-code).
+- POST /bot/2fa/code - [Create the 2FA recovery code](#create-the-2FA-recovery-code).
+  
   
