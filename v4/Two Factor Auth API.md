@@ -6,7 +6,7 @@
   
   ### Two Factor Auth API
 - POST /bot/2fa/secretkey - [Create a 2FA secret key](#create-a-secret-key).
-- POST /bot/2fa/code:verify - [verify the 2FA code](#verify-the-2fa-code).
+- POST /bot/2fa/code:verify - [Verify the 2FA code](#verify-the-2fa-code).
 - POST /bot/2fa/code - [Create the 2FA backup code](#create-2fa-backup-codes).
 
 ## Endpoints
