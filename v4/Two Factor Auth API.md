@@ -7,7 +7,7 @@
   ### Two Factor Auth API
 - POST /bot/2fa/secretkey - [Create a 2FA secret key](#create-a-secret-key).
 - POST /bot/2fa/code:verify - [verify the 2FA code](#verify-the-2fa-code).
-- POST /bot/2fa/code - [Create the 2FA recovery code](#create-2fa-recovery-codes).
+- POST /bot/2fa/code - [Create the 2FA backup code](#create-2fa-backup-codes).
 
 ## Endpoints
 ### Create A Secret Key
@@ -55,7 +55,7 @@ The Response body contains data with the following
 }
 ```
 
-### Create 2FA Recovery Codes
+### Create 2FA Backup Codes
 `POST /bot/2fa/codes`
 
 #### Parameters
@@ -67,18 +67,12 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`codes` |string[] |Yes| 2FA Recovery Codes|
+|`code` |string |Yes| 2FA Backup Code|
 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
-   "codes": 
-    [
-        "23sdw4d234",
-        "23sdw4d234",
-        "23sdw4d234",
-        "23sdw4d234"
-    ]
+   "code": "23sdw4d234"
 }
 ```
