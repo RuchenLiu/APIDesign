@@ -48,7 +48,7 @@ When a user wants to setup two-factor auth (or, more correctly, multi-factor aut
   | Name | Type | Required  | Description |     
   | - | - | - | - | 
   | `CompanyName` | string | yes |  Company Name show in 2fa app|  
-  | `UserAccount` | string | yes |  User Email show in 2fa app|  
+  | `UserAccount` | string | yes |  User Account show in 2fa app|  
   
 The Response body contains data with the following 
 
