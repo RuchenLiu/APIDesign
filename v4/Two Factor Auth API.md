@@ -35,6 +35,7 @@
 ## Endpoints
 
 ### Create A Secret Key
+
 When a user wants to setup two-factor auth (or, more correctly, multi-factor auth) you need to create a secret. 
 ```C# 
  Secret CreateSecret(string CompanyName,string UserAccount)
@@ -64,6 +65,7 @@ VerifyCode() will return either true (the code was valid) or false (the code was
   | - | - | - | - | 
   | `SecretKey` | string | yes |  2fa secret key|  
   | `Code` | string | yes |   2fa code|  
+  
 The Response body is either true (the code was valid) or false (the code was invalid; no points for you!).  
 
 <!-- ### Create A Secret Key
