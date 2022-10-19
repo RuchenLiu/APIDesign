@@ -55,7 +55,7 @@ The Response body contains data with the following
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
 |`SecretKey` |string |Yes| 2FA secret key |
-|`QrcodeUrl` |string |Yes|  qrcode image url of 2FA secret key  |
+|`QrcodeUrl` |string |Yes|  qrcode text url of 2FA  |
 
 ### Verify The 2fa Code
 VerifyCode() will return either true (the code was valid) or false (the code was invalid; no points for you!). 
