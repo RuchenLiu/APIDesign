@@ -277,7 +277,7 @@ The Response body contains data with the following
 }
 ```
 ### Delete the Secret Key of agent
-`Delete /partnerglobalapi/user/{id}/2faConfig`
+`Delete /partnerglobalapi/agent/{id}/2faConfig`
 
 #### Parameters
   | Name | Type | Required  | Description |     
