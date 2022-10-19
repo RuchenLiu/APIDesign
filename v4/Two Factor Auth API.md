@@ -4,6 +4,10 @@
   
   ## Summary
   
+### Comm100.2fa Function
+ - CreateSecret -[Create the Secret Key](#create-a-secret-key).
+ - VerifyCode - [verify the 2FA code](#verify-the-2fa-code).
+ 
 ### Partner Login API
 - POST /partnerloginapi/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-partner-user).
   
@@ -29,6 +33,22 @@
 - DELETE /partnerglobal/2faBackupCode/{id} - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).    
 
 ## Endpoints
+
+### Create A Secret Key
+When a user wants to setup two-factor auth (or, more correctly, multi-factor auth) you need to create a secret. 
+```C# 
+ Secret CreateSecret(string CompanyName,string UserEmail)
+ public class Secret{
+     string QrcodeText;
+     string SecretKey;
+ }
+``` 
+
+### Verify The 2fa Code
+VerifyCode() will return either true (the code was valid) or false (the code was invalid; no points for you!). 
+```C# 
+ bool VerifyCode(string SecretKey,string code)
+``` 
 
 <!-- ### Create A Secret Key
 `POST /2fa/secretkey`
