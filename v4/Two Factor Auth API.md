@@ -4,30 +4,33 @@
   
   ## Summary
   
-  ### Two Factor Auth API
-- POST /2fa/secretkey - [Create a 2FA secret key](#create-a-secret-key).
-- POST /2fa/code:verify - [verify the 2FA code](#verify-the-2fa-code).
-- POST /2fa/code - [Create the 2FA backup code](#create-2fa-backup-codes).
-  
 ### Partner Login API
 - POST /partnerloginapi/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-partner-user).
   
 ### Partner Global API
-- POST /partnerglobal/2faConfig - [Create a 2FA secret key](#create-a-secret-key-of-partner-user).
-- GET /partnerglobal/2faConfig/{id} - [Get the 2FA secret key](#Get-the-secret-key-of-partner-user). 
-- PUT /partnerglobal/2faConfig/{id} - [Update the 2FA secret key](#Get-the-secret-key-of-partner-user). 
-- DELETE /partnerglobal/2faConfig/{id} - [Delete the 2FA secret key](#Delete-the-secret-key-agent).   
+- POST /partnerglobal/user/{id}/2faConfig - [Create a 2FA secret key](#create-a-secret-key-of-partner-user).
+- DELETE /partnerglobal/user/{id}/2faConfig - [Delete the 2FA secret key](#Delete-the-secret-key-of-partner-user). 
+ 
+- POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-partner-user).
+- GET /partnerglobal/2faBackupCode/{id} - [Get the 2FA Backup Code](#get-the-backup-code-of-partner-user). 
+- PUT /partnerglobal/2faBackupCode/{id} - [Update the 2FA Backup Code](#update-the-backup-code-of-partner-user). 
+- DELETE /partnerglobal/2faBackupCode/{id} - [Delete the 2FA Backup Code](#delete-the-backup-code-of-partner-user).
+    
 ### Login API
 - POST /global/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-agent).
   
 ### Global API
 - POST /global/2faConfig - [Create a 2FA secret key](#create-a-secret-key-of-agent).
-- GET /global/2faConfig/{id} - [Get the 2FA secret key](#Get-the-secret-key-agent). 
-- PUT /partnerglobal/2faConfig/{id} - [Update the 2FA secret key](#Get-the-secret-key-of-partner-user). 
-- DELETE /global/2faConfig/{id} - [Delete the 2FA secret key](#Delete-the-secret-key-agent). 
+- DELETE /global/2faConfig/{id} - [Delete the 2FA secret key](#delete-the-secret-key-of-agent). 
+
+- POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
+- GET /partnerglobal/2faBackupCode/{id} - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
+- PUT /partnerglobal/2faBackupCode/{id} - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
+- DELETE /partnerglobal/2faBackupCode/{id} - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).    
+
 ## Endpoints
 
-### Create A Secret Key
+<!-- ### Create A Secret Key
 `POST /2fa/secretkey`
 
 #### Parameters
@@ -92,7 +95,7 @@ The Response body contains data with the following
 {
    "code": "23sdw4d234"
 }
-```
+``` -->
 
 
 ### Verify the 2FA Code of Partner User
@@ -142,45 +145,224 @@ The Response body contains data with the following
 ```
 
 ### Create A Secret Key of Partner User
-`POST /partnerglobalapi/2faConfig`
+`POST /partnerglobalapi/user/{id}/2faConfig`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `partneruserid` | string | yes |  partner user id |
+  | `id` | string | yes |  partner user id |
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
 |`secretKey` |string |Yes| 2FA secret key |
-|`qrcodeUrl` |string |Yes|  qrcode image url of 2FA secret key  |
+|`qrcodeUrl` |string |Yes|  qrcode image text url of 2FA information |
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
-   "qrcodeUrl": "",
-   "secretKey":"b65cnh2y35vrkj2d",
+   "qrcodeUrl": "otpauth://totp/leon%40comm100.com?secret=DQ6EXYKLD4TTJ7DY&issuer=Comm100&period=30&algorithm=SHA1&digits=6",
+   "secretKey":"DQ6EXYKLD4TTJ7DY",
+}
+```
+### Delete the Secret Key of Partner User
+`Delete /partnerglobalapi/user/{id}/2faConfig`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  partner user id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+```Json 
+  HTTP/1.1 200 OK
+```
+### Create A Backup Code of Partner User
+`POST /partnerglobalapi/user/{id}/2faBackupCode`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  partner user id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`code` |string |Yes| 2FA Backup Code |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "code": "DQ6EXYKLD4TTJ7DY",
+}
+```
+### Get the Backup Code of Partner User
+`GET /partnerglobalapi/user/{id}/2faBackupCode`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  partner user id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`code` |string |Yes| 2FA Backup Code |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "code": "DQ6EXYKLD4TTJ7DY",
 }
 ```
 
-### Create A Secret Key of Agent
-`POST /globalapi/2faConfig`
+### Update the Backup Code of Partner User
+`UPDATE /partnerglobalapi/user/{id}/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `partneruserid` | string | yes |  partner user id |
+  | `id` | string | yes |  partner user id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`code` |string |Yes| 2FA Backup Code |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "code": "DQ6EXYKLD4TTJ7DY",
+}
+```
+
+### Delete the Backup Code of Partner User
+`DELETE /partnerglobalapi/user/{id}/2faBackupCode`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  partner user id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`code` |string |Yes| 2FA Backup Code |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+```
+
+### Create A Secret Key of Agent
+`POST /partnerglobalapi/agent/{id}/2faConfig`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  agent id |
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
 |`secretKey` |string |Yes| 2FA secret key |
-|`qrcodeUrl` |string |Yes|  qrcode image url of 2FA secret key  |
+|`qrcodeUrl` |string |Yes|  qrcode image text url of 2FA information |
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
-   "qrcodeUrl": "",
-   "secretKey":"b65cnh2y35vrkj2d",
+   "qrcodeUrl": "otpauth://totp/leon%40comm100.com?secret=DQ6EXYKLD4TTJ7DY&issuer=Comm100&period=30&algorithm=SHA1&digits=6",
+   "secretKey":"DQ6EXYKLD4TTJ7DY",
 }
+```
+### Delete the Secret Key of agent
+`Delete /partnerglobalapi/user/{id}/2faConfig`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  agent id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+```Json 
+  HTTP/1.1 200 OK
+```
+
+### Create A Backup Code of Agent
+`POST /partnerglobalapi/user/{id}/2faBackupCode`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  agent id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`code` |string |Yes| 2FA Backup Code |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "code": "DQ6EXYKLD4TTJ7DY",
+}
+```
+### Get the Backup Code of Agent
+`GET /partnerglobalapi/user/{id}/2faBackupCode`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  agent id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`code` |string |Yes| 2FA Backup Code |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "code": "DQ6EXYKLD4TTJ7DY",
+}
+```
+
+### Update the Backup Code of Agent
+`UPDATE /partnerglobalapi/user/{id}/2faBackupCode`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  agent id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`code` |string |Yes| 2FA Backup Code |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "code": "DQ6EXYKLD4TTJ7DY",
+}
+```
+
+### Delete the Backup Code of Agent
+`DELETE /partnerglobalapi/user/{id}/2faBackupCode`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `id` | string | yes |  agent id |
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`code` |string |Yes| 2FA Backup Code |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
 ```
