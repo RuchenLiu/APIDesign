@@ -37,18 +37,34 @@
 ### Create A Secret Key
 When a user wants to setup two-factor auth (or, more correctly, multi-factor auth) you need to create a secret. 
 ```C# 
- Secret CreateSecret(string CompanyName,string UserEmail)
+ Secret CreateSecret(string CompanyName,string UserAccount)
  public class Secret{
-     string QrcodeText;
+     string QrcodeUrl;
      string SecretKey;
  }
 ``` 
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - | 
+  | `CompanyName` | string | yes |  Company Name show in 2fa app|  
+  | `UserAccount` | string | yes |  User Email show in 2fa app|  
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`SecretKey` |string |Yes| 2FA secret key |
+|`QrcodeUrl` |string |Yes|  qrcode image url of 2FA secret key  |
 
 ### Verify The 2fa Code
 VerifyCode() will return either true (the code was valid) or false (the code was invalid; no points for you!). 
 ```C# 
- bool VerifyCode(string SecretKey,string code)
+ bool VerifyCode(string SecretKey,string Code)
 ``` 
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - | 
+  | `SecretKey` | string | yes |  2fa secret key|  
+  | `Code` | string | yes |   2fa code|  
+The Response body is either true (the code was valid) or false (the code was invalid; no points for you!).  
 
 <!-- ### Create A Secret Key
 `POST /2fa/secretkey`
