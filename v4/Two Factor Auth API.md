@@ -13,6 +13,7 @@
   
 ### Partner Global API
 - POST /partnerglobal/user/{id}/2faConfig - [Create a 2FA secret key](#create-a-secret-key-of-partner-user).
+- UPDATE /partnerglobal/user/{id}/2faConfig - [Update the 2FA secret key](#Update-the-secret-key-of-partner-user). 
 - DELETE /partnerglobal/user/{id}/2faConfig - [Delete the 2FA secret key](#Delete-the-secret-key-of-partner-user). 
  
 - POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-partner-user).
@@ -25,6 +26,7 @@
   
 ### Global API
 - POST /global/2faConfig - [Create a 2FA secret key](#create-a-secret-key-of-agent).
+- UPDATE /partnerglobal/user/{id}/2faConfig - [Update the 2FA secret key](#Update-the-secret-key-of-partner-user). 
 - DELETE /global/2faConfig/{id} - [Delete the 2FA secret key](#delete-the-secret-key-of-agent). 
 
 - POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
