@@ -55,7 +55,7 @@ The Response body contains data with the following
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
 |`SecretKey` |string |Yes| 2FA secret key |
-|`QrcodeUrl` |string |Yes|  qrcode text url of 2FA  |
+|`otpauthUrl` |string |Yes|  otpauth Url of 2FA  |
 
 ### Verify The 2fa Code
 VerifyCode() will return either true (the code was valid) or false (the code was invalid; no points for you!). 
@@ -83,7 +83,7 @@ The Response body contains data with the following
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
 |`secretKey` |string |Yes| 2FA secret key |
-|`qrcodeUrl` |string |Yes|  qrcode image url of 2FA secret key  |
+|`otpauthUrl` |string |Yes|  otpauth Url of 2FA  |
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
@@ -197,12 +197,12 @@ The Response body contains data with the following
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
 |`secretKey` |string |Yes| 2FA secret key |
-|`qrcodeUrl` |string |Yes|  qrcode image text url of 2FA information |
+|`otpauthUrl` |string |Yes|  otpauth Url of 2FA  |
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
-   "qrcodeUrl": "otpauth://totp/leon%40comm100.com?secret=DQ6EXYKLD4TTJ7DY&issuer=Comm100&period=30&algorithm=SHA1&digits=6",
+   "otpauthUrl": "otpauth://totp/leon%40comm100.com?secret=DQ6EXYKLD4TTJ7DY&issuer=Comm100&period=30&algorithm=SHA1&digits=6",
    "secretKey":"DQ6EXYKLD4TTJ7DY",
 }
 ```
@@ -308,12 +308,12 @@ The Response body contains data with the following
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
 |`secretKey` |string |Yes| 2FA secret key |
-|`qrcodeUrl` |string |Yes|  qrcode image text url of 2FA information |
+|`otpauthUrl` |string |Yes|  otpauth Url of 2FA  |
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
-   "qrcodeUrl": "otpauth://totp/leon%40comm100.com?secret=DQ6EXYKLD4TTJ7DY&issuer=Comm100&period=30&algorithm=SHA1&digits=6",
+   "otpauthUrl": "otpauth://totp/leon%40comm100.com?secret=DQ6EXYKLD4TTJ7DY&issuer=Comm100&period=30&algorithm=SHA1&digits=6",
    "secretKey":"DQ6EXYKLD4TTJ7DY",
 }
 ```
