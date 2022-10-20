@@ -73,11 +73,12 @@ The Response body is either true (the code was valid) or false (the code was inv
 
 <!-- ### Create A Secret Key
 `POST /2fa/secretkey`
-
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-
+|`secretKey` |string |Yes| 2FA secret key |
+|`otpauthUrl` |string |Yes|  otpauth Url of 2FA  |
+|`code` |string |Yes| verify code of 2FA  |
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
