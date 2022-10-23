@@ -352,14 +352,13 @@ The Response body contains data with the following
   Content-Type: application/json
 ``` -->
 
-### Create A Secret Key of Agent
-`POST /partnerglobalapi/agent/{id}/2faConfig`
+### Get A Secret Key of Agent
+`GET /partnerglobalapi/2faSecret`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-
-
+  
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
@@ -374,6 +373,57 @@ The Response body contains data with the following
    "secretKey":"DQ6EXYKLD4TTJ7DY",
 }
 ```
+
+### Get the 2fa config of Agent
+`GET /partnerglobalapi/2faConfig`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  |`id` |string |Yes| 2FA config Id |
+
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "id": "DQ6EXYKLD4TTJ7DY",
+}
+```
+
+### Create A 2fa config of Agent
+`POST /partnerglobalapi/2faConfig`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `token` | string | yes |  token containing agent id |
+  |`type` |string |Yes| `login`,`profile` |
+  |`secretKey` |string |Yes| 2FA secret key |
+  | `code` | string | yes |  2FA code or backup code| 
+  
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  |`errcode` |int |Yes| 0 for success |
+  |`message` |string |Yes|    |
+  | `jwtToken` | string | no |  jwt token for logining | 
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "errcode": 0,
+   "message":"success",
+   "jwtToken":"asdfasdf345345wfwerwe"
+}
+```
+
+
 ### Delete the Secret Key of agent
 `Delete /partnerglobalapi/2faConfig`
 
