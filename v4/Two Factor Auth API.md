@@ -12,7 +12,7 @@
 - POST /partnerloginapi/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-partner-user).
   
 ### Partner Global API
-- GET /partnerglobal/2faSecret - [Get a 2FA secret key](#Get-the-secret-key-of-agent).
+- GET /partnerglobal/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key-of-partner-user).
 - GET /partnerglobal/2faConfig - [Get a 2FA config](#Get-the-2fa-config-of-partner-user).
 - POST /partnerglobal/2faConfig - [Create a 2FA config](#create-a-2fa-config-of-partner-user).
 - UPDATE /partnerglobal/2faConfig - [Update the 2FA config](#Update-the-2fa-config-of-partner-user). 
@@ -27,7 +27,7 @@
 - POST /global/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-agent).
   
 ### Global API
-- GET /global/2faSecret - [Get a 2FA secret key](#Get-the-secret-key-of-agent).
+- GET /global/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key-of-agent).
 - GET /global/2faConfig - [Get a 2FA config](#Get-the-2fa-config-of-agent).
 - POST /global/2faConfig - [Create a 2FA config](#create-a-2fa-config-of-agent).
 - UPDATE /global/2faConfig - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
@@ -194,7 +194,7 @@ The Response body contains data with the following
 }
 ```
 
-### Get A Secret Key of Partner User
+### Get A 2fa Secret Key of Partner User
 `GET /partnerglobalapi/2faSecret`
 
 #### Parameters
@@ -262,7 +262,7 @@ The Response body contains data with the following
 }
 ```
 
-### Delete the Secret Key of Partner User
+### Delete the 2fa config of Partner User
 `Delete /partnerglobalapi/2faConfig`
 
 #### Parameters
@@ -352,7 +352,7 @@ The Response body contains data with the following
   Content-Type: application/json
 ``` -->
 
-### Get A Secret Key of Agent
+### Get A 2fa Secret Key of Agent
 `GET /partnerglobalapi/2faSecret`
 
 #### Parameters
@@ -424,7 +424,7 @@ The Response body contains data with the following
 ```
 
 
-### Delete the Secret Key of agent
+### Delete the 2fa of agent
 `Delete /partnerglobalapi/2faConfig`
 
 #### Parameters
