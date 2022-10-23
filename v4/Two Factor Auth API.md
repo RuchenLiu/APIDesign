@@ -21,7 +21,7 @@
 - POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-partner-user).
 - GET /partnerglobal/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-partner-user). 
 - PUT /partnerglobal/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-partner-user). 
-- DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-partner-user).
+<!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-partner-user). -->
     
 ### Login API
 - POST /global/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-agent).
@@ -36,7 +36,7 @@
 - POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
 - GET /partnerglobal/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
 - PUT /partnerglobal/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
-- DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).    
+<!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
 
 ## Endpoints
 
@@ -194,13 +194,12 @@ The Response body contains data with the following
 }
 ```
 
-### Create A Secret Key of Partner User
-`POST /partnerglobalapi/2faSecret`
+### Get A Secret Key of Partner User
+`GET /partnerglobalapi/2faSecret`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `2faToken` | string | yes |  token containing partner user id |
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
@@ -216,13 +215,34 @@ The Response body contains data with the following
 }
 ```
 
-### Create A 2faconfig of Partner User
+### Get the 2fa config of Partner User
+`GET /partnerglobalapi/2faConfig`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  |`id` |string |Yes| 2FA config Id |
+
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "id": "DQ6EXYKLD4TTJ7DY",
+}
+```
+
+### Create A 2fa config of Partner User
 `POST /partnerglobalapi/2faConfig`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `2faToken` | string | yes |  token containing partner user id |
+  | `token` | string | yes |  token containing partner user id |
+  |`type` |string |Yes| `login`,`profile` |
   |`secretKey` |string |Yes| 2FA secret key |
   | `code` | string | yes |  2FA code or backup code| 
   
@@ -232,6 +252,7 @@ The Response body contains data with the following
   | - | - | - | - | 
   |`errcode` |int |Yes| 0 for success |
   |`message` |string |Yes|    |
+  | `jwtToken` | string | no |  jwt token for logining | 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
@@ -242,12 +263,11 @@ The Response body contains data with the following
 ```
 
 ### Delete the Secret Key of Partner User
-`Delete /partnerglobalapi/user/{id}/2faConfig`
+`Delete /partnerglobalapi/2faConfig`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `id` | string | yes |  partner user id |
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
@@ -255,13 +275,13 @@ The Response body contains data with the following
 ```Json 
   HTTP/1.1 200 OK
 ```
+
 ### Create A Backup Code of Partner User
-`POST /partnerglobalapi/user/{id}/2faBackupCode`
+`POST /partnerglobalapi/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `id` | string | yes |  partner user id |
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
@@ -274,6 +294,7 @@ The Response body contains data with the following
    "code": "DQ6EXYKLD4TTJ7DY",
 }
 ```
+
 ### Get the Backup Code of Partner User
 `GET /partnerglobalapi/user/{id}/2faBackupCode`
 
@@ -314,7 +335,7 @@ The Response body contains data with the following
 }
 ```
 
-### Delete the Backup Code of Partner User
+<!-- ### Delete the Backup Code of Partner User
 `DELETE /partnerglobalapi/user/{id}/2faBackupCode`
 
 #### Parameters
@@ -329,7 +350,7 @@ The Response body contains data with the following
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
-```
+``` -->
 
 ### Create A Secret Key of Agent
 `POST /partnerglobalapi/agent/{id}/2faConfig`
@@ -337,7 +358,8 @@ The Response body contains data with the following
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `id` | string | yes |  agent id |
+
+
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
@@ -353,12 +375,12 @@ The Response body contains data with the following
 }
 ```
 ### Delete the Secret Key of agent
-`Delete /partnerglobalapi/agent/{id}/2faConfig`
+`Delete /partnerglobalapi/2faConfig`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `id` | string | yes |  agent id |
+  
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
@@ -368,12 +390,12 @@ The Response body contains data with the following
 ```
 
 ### Create A Backup Code of Agent
-`POST /partnerglobalapi/user/{id}/2faBackupCode`
+`POST /partnerglobalapi/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `id` | string | yes |  agent id |
+  
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
@@ -387,12 +409,12 @@ The Response body contains data with the following
 }
 ```
 ### Get the Backup Code of Agent
-`GET /partnerglobalapi/user/{id}/2faBackupCode`
+`GET /partnerglobalapi/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `id` | string | yes |  agent id |
+  
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
@@ -407,12 +429,12 @@ The Response body contains data with the following
 ```
 
 ### Update the Backup Code of Agent
-`UPDATE /partnerglobalapi/user/{id}/2faBackupCode`
+`UPDATE /partnerglobalapi/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `id` | string | yes |  agent id |
+  
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
@@ -427,12 +449,12 @@ The Response body contains data with the following
 ```
 
 ### Delete the Backup Code of Agent
-`DELETE /partnerglobalapi/user/{id}/2faBackupCode`
+`DELETE /partnerglobalapi/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `id` | string | yes |  agent id |
+  
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
