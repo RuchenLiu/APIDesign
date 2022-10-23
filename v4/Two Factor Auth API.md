@@ -13,10 +13,10 @@
   
 ### Partner Global API
 - GET /partnerglobal/2faSecret - [Get a 2FA secret key](#Get-the-secret-key-of-agent).
-- GET /partnerglobal/2faConfig - [Get a 2FA config](#Get-the-secret-key-of-partner-user).
-- POST /partnerglobal/2faConfig - [Create a 2FA config](#create-a-secret-key-of-partner-user).
-- UPDATE /partnerglobal/2faConfig - [Update the 2FA config](#Update-the-secret-key-of-partner-user). 
-- DELETE /partnerglobal/2faConfig - [Delete the 2FA config](#Delete-the-secret-key-of-partner-user). 
+- GET /partnerglobal/2faConfig - [Get a 2FA config](#Get-the-2fa-config-of-partner-user).
+- POST /partnerglobal/2faConfig - [Create a 2FA config](#create-a-2fa-config-of-partner-user).
+- UPDATE /partnerglobal/2faConfig - [Update the 2FA config](#Update-the-2fa-config-of-partner-user). 
+- DELETE /partnerglobal/2faConfig - [Delete the 2FA config](#Delete-the-2fa-config-of-partner-user). 
  
 - POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-partner-user).
 - GET /partnerglobal/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-partner-user). 
@@ -29,9 +29,9 @@
 ### Global API
 - GET /global/2faSecret - [Get a 2FA secret key](#Get-the-secret-key-of-agent).
 - GET /global/2faConfig - [Get a 2FA config](#Get-the-2fa-config-of-agent).
-- POST /global/2faConfig - [Create a 2FA config](#create-a-secret-key-of-agent).
-- UPDATE /global/2faConfig - [Update the 2FA config](#Update-the-secret-key-of-agent). 
-- DELETE /global/2faConfig - [Delete the 2FA config](#delete-the-secret-key-of-agent). 
+- POST /global/2faConfig - [Create a 2FA config](#create-a-2fa-config-of-agent).
+- UPDATE /global/2faConfig - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
+- DELETE /global/2faConfig - [Delete the 2FA config](#delete-the-2fa-config-of-agent). 
 
 - POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
 - GET /partnerglobal/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
@@ -160,12 +160,13 @@ The Response body contains data with the following
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
 |`result` |string |Yes| `success`,`fail` |
-| `jwtToken` | string | yes |  jwt token for logining | 
+|`jwtToken` | string | no |  jwt token for logining | 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
    "result": "success",
+   "jwtToken":"sdfasdf3452t4werrtewr"
 }
 ```
 
@@ -189,11 +190,12 @@ The Response body contains data with the following
   Content-Type: application/json
 {
    "result": "success",
+   "jwtToken":"sdfasdf3452t4werrtewr"
 }
 ```
 
 ### Create A Secret Key of Partner User
-`POST /partnerglobalapi/2faConfig`
+`POST /partnerglobalapi/2faSecret`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -213,6 +215,32 @@ The Response body contains data with the following
    "secretKey":"DQ6EXYKLD4TTJ7DY",
 }
 ```
+
+### Create A 2faconfig of Partner User
+`POST /partnerglobalapi/2faConfig`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `2faToken` | string | yes |  token containing partner user id |
+  |`secretKey` |string |Yes| 2FA secret key |
+  | `code` | string | yes |  2FA code or backup code| 
+  
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  |`errcode` |int |Yes| 0 for success |
+  |`message` |string |Yes|    |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "errcode": 0,
+   "message":"success",
+}
+```
+
 ### Delete the Secret Key of Partner User
 `Delete /partnerglobalapi/user/{id}/2faConfig`
 
