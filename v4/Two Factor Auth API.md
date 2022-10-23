@@ -262,6 +262,32 @@ The Response body contains data with the following
 }
 ```
 
+### Update the 2fa config of Partner User
+`PUT /partnerglobalapi/2faConfig`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `token` | string | yes |  token containing partner user id |
+  |`secretKey` |string |Yes| 2FA secret key |
+  | `code` | string | yes |  2FA code or backup code| 
+  
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  |`errcode` |int |Yes| 0 for success |
+  |`message` |string |Yes|    |
+  
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "errcode": 0,
+   "message":"success",
+}
+```
+
 ### Delete the 2fa config of Partner User
 `Delete /partnerglobalapi/2faConfig`
 
@@ -423,6 +449,31 @@ The Response body contains data with the following
 }
 ```
 
+### Update the 2fa config of Agent
+`POST /partnerglobalapi/2faConfig`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `token` | string | yes |  token containing agent id |
+  |`secretKey` |string |Yes| 2FA secret key |
+  | `code` | string | yes |  2FA code or backup code| 
+  
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  |`errcode` |int |Yes| 0 for success |
+  |`message` |string |Yes|    |
+  
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "errcode": 0,
+   "message":"success",
+}
+```
 
 ### Delete the 2fa of agent
 `Delete /partnerglobalapi/2faConfig`
