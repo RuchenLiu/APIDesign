@@ -25,6 +25,7 @@
     
 ### Login API
 - POST /loginapi/login - [Agent Login](#agent-login).
+- POST /loginapi/agentConsoleLogin - [Agent Console Login](#agent-console-login).
 - POST /loginapi/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-agent).
 
   
@@ -175,6 +176,26 @@ The Response body contains data with the following
 
 ### Agent Login 
 `POST /loginapi/login`
+
+
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`2faToken` |string |No| 2fa jwt token |
+|`isNeedVerify2faCode` |bool |Yes| is need to verify the 2fa code |
+
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "2faRoken": "dfghjklgvdxhfdhdsgdsg",
+   "isNeedVerifyThe2faCode":true
+}
+```
+
+### Agent Console Login 
+`POST /loginapi/agentConsoleLogin`
 
 
   #### Response
