@@ -35,9 +35,9 @@
 - UPDATE /global/2faConfig - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
 - DELETE /global/2faConfig - [Delete the 2FA config](#delete-the-2fa-config-of-agent). 
 
-- POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
-- GET /partnerglobal/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
-- PUT /partnerglobal/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
+- POST /global/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
+- GET /global/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
+- PUT /global/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
 
 ## Endpoints
