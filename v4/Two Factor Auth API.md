@@ -24,7 +24,9 @@
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-partner-user). -->
     
 ### Login API
-- POST /global/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-agent).
+- POST /loginapi/login - [Agent Login](#agent-login).
+- POST /loginapi/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-agent).
+
   
 ### Global API
 - GET /global/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key-of-agent).
@@ -100,6 +102,7 @@ The Response body contains data with the following
 }
 ```
 
+
 ### Verify the 2FA Code
 `POST /2fa/code:verify`
 
@@ -167,6 +170,26 @@ The Response body contains data with the following
 {
    "result": "success",
    "jwtToken":"sdfasdf3452t4werrtewr"
+}
+```
+
+### Agent Login 
+`POST /loginapi/login`
+
+
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+|`2faToken` |string |No| 2fa jwt token |
+|`isNeedVerify2faCode` |bool |Yes| is need to verify the 2fa code |
+
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "2faRoken": "dfghjklgvdxhfdhdsgdsg",
+   "isNeedVerifyThe2faCode":true
 }
 ```
 
