@@ -183,10 +183,11 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`2faToken` |string |No| 2fa jwt token,need when 2faStatus is isNeed2faVerify |
-|`secretKey` |string |No| 2FA secret key,need when 2faStatus is isNeed2faSetup|
-|`otpauthUrl` |string |No|  otpauth Url of 2FA,need when 2faStatus is isNeed2faSetup  |
-|`2faStatus` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
+|`preLoginToken` |string |No| prelogin jwt token,need when nextStep is isNeed2faVerify |
+|`secretKey` |string |No| 2FA secret key,need when nextStep is isNeed2faSetup|
+|`otpauthUrl` |string |No|  otpauth Url of 2FA,need when nextStep is isNeed2faSetup  |
+|`nextStep` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
+|`errCode` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
 
 ```Json 
   HTTP/1.1 200 OK
@@ -232,13 +233,15 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`result` |string |Yes| `success`,`fail` |
-| `jwtToken` | string | yes |  jwt token for logining | 
+|`error` |string |Yes| ``,`` |
+|`message` |string |Yes| 超时,次数超限，锁账号|
+| `jwtToken` | string | no |  jwt token for logining | 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
-   "result": "success",
+   "error": "success",
+   "message":"",
    "jwtToken":"sdfasdf3452t4werrtewr"
 }
 ```
