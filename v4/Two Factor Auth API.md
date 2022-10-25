@@ -9,7 +9,7 @@
  - VerifyCode - [verify the 2FA code](#verify-the-2fa-code).
  
 ### Partner Login API
-- POST /partnerloginapi/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-partner-user).
+- POST /partnerloginapi/endlogin - [verify the 2FA code](#verify-the-2fa-code-of-partner-user).
   
 ### Partner Global API
 - GET /partnerglobal/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key-of-partner-user).
@@ -25,8 +25,8 @@
     
 ### Login API
 - POST /loginapi/login - [Agent Login](#agent-login).
-- POST /loginapi/agentConsoleLogin - [Agent Console Login](#agent-console-login).
-- POST /loginapi/2fa:verify - [verify the 2FA code](#verify-the-2fa-code-of-agent).
+<!-- - POST /loginapi/agentConsoleLogin - [Agent Console Login](#agent-console-login). -->
+- POST /loginapi/endlogin - [verify the 2FA code](#verify-the-2fa-code-of-agent).
 
   
 ### Global API
