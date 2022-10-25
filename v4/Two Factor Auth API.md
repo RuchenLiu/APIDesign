@@ -151,12 +151,13 @@ The Response body contains data with the following
 
 
 ### Verify the 2FA Code of Partner User
-`POST /partnerloginapi/2fa:verify`
+`POST /partnerloginapi/endlogin`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - | 
   | `2faToken` | string | yes | 2fa jwt token containing partner user id |  
+  |`secretKey` |string |no| 2FA secret key |
   | `code` | string | yes |  2FA code or backup code|  
 
   #### Response
@@ -182,19 +183,21 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`2faToken` |string |No| 2fa jwt token |
-|`isNeedVerify2faCode` |bool |Yes| is need to verify the 2fa code |
+|`2faToken` |string |No| 2fa jwt token,need when stauts is isNeed2faVerify |
+|`secretKey` |string |No| 2FA secret key,need when stauts is isNeed2faSetup|
+|`otpauthUrl` |string |No|  otpauth Url of 2FA,need when stauts is isNeed2faSetup  |
+|`status` |bool |Yes| `isNeed2faVerify`,`isNeed2faSetup` |
 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
    "2faRoken": "dfghjklgvdxhfdhdsgdsg",
-   "isNeedVerifyThe2faCode":true
+   "status": "isNeed2faVerify"
 }
 ```
 
-### Agent Console Login 
+<!-- ### Agent Console Login 
 `POST /loginapi/agentConsoleLogin`
 
 
@@ -212,15 +215,16 @@ The Response body contains data with the following
    "2faRoken": "dfghjklgvdxhfdhdsgdsg",
    "isNeedVerifyThe2faCode":true
 }
-```
+``` -->
 
 ### Verify the 2FA Code of Agent
-`POST /loginapi/2fa:verify`
+`POST /loginapi/endlogin`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - | 
-  | `2faToken` | string | yes | 2fa jwt token containing agent id |   
+  | `2faToken` | string | yes | 2fa jwt token containing agent id |  
+  |`secretKey` |string |no| 2FA secret key |
   | `code` | string | yes |  2FA code or backup code|  
 
   #### Response
