@@ -224,7 +224,7 @@ The Response body contains data with the following
   | Name | Type | Required  | Description |     
   | - | - | - | - | 
   | `2faToken` | string | yes | 2fa jwt token containing agent id |  
-  |`secretKey` |string |no| 2FA secret key |
+  |`secretKey` |string |no| 2FA secret key,when setup secretkey |
   | `code` | string | yes |  2FA code or backup code|  
   | `isSetCookie` | bool | yes | set token to cookie |  
 
@@ -291,7 +291,6 @@ The Response body contains data with the following
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
   | `token` | string | yes |  token containing partner user id |
-  |`type` |string |Yes| `login`,`profile` |
   |`secretKey` |string |Yes| 2FA secret key |
   | `code` | string | yes |  2FA code or backup code| 
   
@@ -299,15 +298,12 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-  |`errcode` |int |Yes| 0 for success |
-  |`message` |string |Yes|    |
-  | `jwtToken` | string | no |  jwt token for logining | 
+  |`result` |string |Yes| `success`,`fail` |
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
-   "errcode": 0,
-   "message":"success",
+   "result":"success",
 }
 ```
 
