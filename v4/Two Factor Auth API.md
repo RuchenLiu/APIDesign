@@ -183,17 +183,17 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`2faToken` |string |No| 2fa jwt token,need when stauts is isNeed2faVerify |
-|`secretKey` |string |No| 2FA secret key,need when stauts is isNeed2faSetup|
-|`otpauthUrl` |string |No|  otpauth Url of 2FA,need when stauts is isNeed2faSetup  |
-|`status` |bool |Yes| `isNeed2faVerify`,`isNeed2faSetup` |
+|`2faToken` |string |No| 2fa jwt token,need when 2faStatus is isNeed2faVerify |
+|`secretKey` |string |No| 2FA secret key,need when 2faStatus is isNeed2faSetup|
+|`otpauthUrl` |string |No|  otpauth Url of 2FA,need when 2faStatus is isNeed2faSetup  |
+|`2faStatus` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
    "2faRoken": "dfghjklgvdxhfdhdsgdsg",
-   "status": "isNeed2faVerify"
+   "2faStatus": "isNeed2faVerify"
 }
 ```
 
@@ -226,6 +226,7 @@ The Response body contains data with the following
   | `2faToken` | string | yes | 2fa jwt token containing agent id |  
   |`secretKey` |string |no| 2FA secret key |
   | `code` | string | yes |  2FA code or backup code|  
+  | `isSetCookie` | bool | yes | set token to cookie |  
 
   #### Response
 The Response body contains data with the following 
