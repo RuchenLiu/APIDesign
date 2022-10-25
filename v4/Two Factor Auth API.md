@@ -156,7 +156,7 @@ The Response body contains data with the following
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - | 
-  | `2faToken` | string | yes | 2fa jwt token containing partner user id |  
+  | `preLoginToken` | string | yes | 2fa jwt token containing partner user id |  
   |`secretKey` |string |no| 2FA secret key |
   | `code` | string | yes |  2FA code or backup code|  
 
@@ -187,14 +187,14 @@ The Response body contains data with the following
 |`secretKey` |string |No| 2FA secret key,need when nextStep is isNeed2faSetup|
 |`otpauthUrl` |string |No|  otpauth Url of 2FA,need when nextStep is isNeed2faSetup  |
 |`nextStep` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
-|`errCode` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
+|`errCode` |enum |Yes| |
 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
-   "2faRoken": "dfghjklgvdxhfdhdsgdsg",
-   "2faStatus": "isNeed2faVerify"
+   "preLoginToken": "dfghjklgvdxhfdhdsgdsg",
+   "nextStep": "isNeed2faVerify"
 }
 ```
 
