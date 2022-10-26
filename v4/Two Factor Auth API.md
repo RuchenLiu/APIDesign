@@ -8,21 +8,7 @@
  - CreateSecret -[Create the Secret Key](#create-a-secret-key).
  - VerifyCode - [verify the 2FA code](#verify-the-2fa-code).
  
-### Partner Login API
-- POST /partnerloginapi/endlogin - [verify the 2FA code](#verify-the-2fa-code-of-partner-user).
-  
-### Partner Global API
-- GET /partnerglobal/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key-of-partner-user).
-- GET /partnerglobal/2faConfig - [Get a 2FA config](#Get-the-2fa-config-of-partner-user).
-- POST /partnerglobal/2faConfig - [Create a 2FA config](#create-a-2fa-config-of-partner-user).
-- UPDATE /partnerglobal/2faConfig - [Update the 2FA config](#Update-the-2fa-config-of-partner-user). 
-- DELETE /partnerglobal/2faConfig - [Delete the 2FA config](#Delete-the-2fa-config-of-partner-user). 
  
-- POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-partner-user).
-- GET /partnerglobal/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-partner-user). 
-- PUT /partnerglobal/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-partner-user). 
-<!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-partner-user). -->
-    
 ### Login API
 - POST /loginapi/login - [Agent Login](#agent-login).
 <!-- - POST /loginapi/agentConsoleLogin - [Agent Console Login](#agent-console-login). -->
@@ -40,6 +26,23 @@
 - GET /global/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
 - PUT /global/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
+
+### Partner Login API
+- POST /partnerloginapi/endlogin - [verify the 2FA code](#verify-the-2fa-code-of-partner-user).
+  
+### Partner Global API
+- GET /partnerglobal/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key-of-partner-user).
+- GET /partnerglobal/2faConfig - [Get a 2FA config](#Get-the-2fa-config-of-partner-user).
+- POST /partnerglobal/2faConfig - [Create a 2FA config](#create-a-2fa-config-of-partner-user).
+- UPDATE /partnerglobal/2faConfig - [Update the 2FA config](#Update-the-2fa-config-of-partner-user). 
+- DELETE /partnerglobal/2faConfig - [Delete the 2FA config](#Delete-the-2fa-config-of-partner-user). 
+ 
+- POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-partner-user).
+- GET /partnerglobal/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-partner-user). 
+- PUT /partnerglobal/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-partner-user). 
+<!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-partner-user). -->
+    
+
 
 ## Endpoints
 
