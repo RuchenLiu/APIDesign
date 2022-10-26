@@ -233,16 +233,20 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`error` |string |Yes| ``,`` |
-|`message` |string |Yes| 超时,次数超限，锁账号|
+|`error` |string |no| `Timeout`,`times out of limit`，`account locked` |
+|`message` |string |no| |
 | `jwtToken` | string | no |  jwt token for logining | 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
-   "error": "success",
-   "message":"",
    "jwtToken":"sdfasdf3452t4werrtewr"
+}
+
+HTTP/1.1 400 OK
+{
+   "error": "Timeout",
+   "message":"",
 }
 ```
 
