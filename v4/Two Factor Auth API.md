@@ -214,7 +214,7 @@ The Response body contains data with the following
 |`verificationCode` |string |Yes| |
 |`hasMutipleSite` |bool |Yes| |
 |`siteIds` |int[] |Yes| |
-|`isFirstLogin` |int[] |Yes| |
+|`isFirstLogin` |bool |Yes| |
 |`superAgentId` |guid |Yes| |
 |`days` |int |Yes| |
 |`trialInfo` |object |Yes| |
