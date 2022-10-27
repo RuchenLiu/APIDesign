@@ -10,7 +10,7 @@
  
  
 ### Login API
-- POST /global/login - [Agent Login](#agent-login).
+- POST /global/jwtToken/login - [Agent Login](#agent-login).
 <!-- - POST /loginapi/agentConsoleLogin - [Agent Console Login](#agent-console-login). -->
 - POST /global/endlogin - [verify the 2FA code](#verify-the-2fa-code-of-agent).
 
@@ -52,7 +52,7 @@ When a user wants to setup two-factor auth (or, more correctly, multi-factor aut
 ```C# 
  Secret CreateSecret(string CompanyName,string UserAccount)
  public class Secret{
-     string QrcodeUrl;
+     string OtpauthUrl;
      string SecretKey;
  }
 ``` 
@@ -67,7 +67,7 @@ The Response body contains data with the following
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
 |`SecretKey` |string |Yes| 2FA secret key |
-|`otpauthUrl` |string |Yes|  otpauth Url of 2FA  |
+|`OtpauthUrl` |string |Yes|  otpauth Url of 2FA  |
 
 ### Verify The 2fa Code
 VerifyCode() will return either true (the code was valid) or false (the code was invalid; no points for you!). 
@@ -179,7 +179,7 @@ The Response body contains data with the following
 ```
 
 ### Agent Login 
-`POST /loginapi/login`
+`POST /global/jwtToken/login`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -249,7 +249,7 @@ The Response body contains data with the following
 ``` -->
 
 ### Verify the 2FA Code of Agent
-`POST /loginapi/endlogin`
+`POST /global/endlogin`
 
 #### Parameters
   | Name | Type | Required  | Description |     
