@@ -217,7 +217,7 @@ The Response body contains data with the following
 |`isFirstLogin` |int[] |Yes| |
 |`superAgentId` |guid |Yes| |
 |`days` |int |Yes| |
-|`trialInfo` |json |Yes| |
+|`trialInfo` |object |Yes| |
 
 ```Json 
   HTTP/1.1 200 OK
