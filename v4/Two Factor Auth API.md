@@ -26,7 +26,7 @@
 - GET /global/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
 - PUT /global/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
-
+<!-- 
 ### Partner Login API
 - POST /partnerloginapi/endlogin - [verify the 2FA code](#verify-the-2fa-code-of-partner-user).
   
@@ -39,7 +39,7 @@
  
 - POST /partnerglobal/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-partner-user).
 - GET /partnerglobal/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-partner-user). 
-- PUT /partnerglobal/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-partner-user). 
+- PUT /partnerglobal/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-partner-user).  -->
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-partner-user). -->
     
 
