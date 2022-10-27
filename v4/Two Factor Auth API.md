@@ -181,6 +181,18 @@ The Response body contains data with the following
 ### Agent Login 
 `POST /loginapi/login`
 
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - | 
+  | `partnerId` | int | yes |  |     
+  | `siteId` | int | no |  |  
+  | `email` |string |yes|  |
+  | `password` | string | yes | |  
+  | `verificationCode` | string | no | |  
+  | `isMobile` | bool | no |  |  
+  | `ip` | string | no |  | 
+  | `isAutoLoginForRegistration` | bool | no |  | 
+  
 
   #### Response
 The Response body contains data with the following 
@@ -191,6 +203,21 @@ The Response body contains data with the following
 |`otpauthUrl` |string |No|  otpauth Url of 2FA,need when nextStep is isNeed2faSetup  |
 |`nextStep` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
 |`errCode` |enum |Yes| |
+|`errMessage` |string |No| |
+|`url` |string |No| |
+|`siteId` |int |Yes| |
+|`agentId` |guid |Yes| |
+|`email` |string |Yes| |
+|`jwtToken` |string |Yes| |
+|`expireTime` |datetime |No| |
+|`showVerificationCode` |bool |Yes| |
+|`verificationCode` |string |Yes| |
+|`hasMutipleSite` |bool |Yes| |
+|`siteIds` |int[] |Yes| |
+|`isFirstLogin` |int[] |Yes| |
+|`superAgentId` |guid |Yes| |
+|`days` |int |Yes| |
+|`trialInfo` |json |Yes| |
 
 ```Json 
   HTTP/1.1 200 OK
