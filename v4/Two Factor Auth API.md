@@ -10,9 +10,9 @@
  
  
 ### Login API
-- POST /loginapi/login - [Agent Login](#agent-login).
+- POST /global/login - [Agent Login](#agent-login).
 <!-- - POST /loginapi/agentConsoleLogin - [Agent Console Login](#agent-console-login). -->
-- POST /loginapi/endlogin - [verify the 2FA code](#verify-the-2fa-code-of-agent).
+- POST /global/endlogin - [verify the 2FA code](#verify-the-2fa-code-of-agent).
 
   
 ### Global API
