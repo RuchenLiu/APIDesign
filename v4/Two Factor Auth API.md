@@ -192,7 +192,7 @@ The Response body contains data with the following
   | `isMobile` | bool | no |  |  
   | `ip` | string | no |  | 
   | `isAutoLoginForRegistration` | bool | no |  | 
-  | `2fatime` | datetime | no |the time of 2fa verified , only for web login |
+  | `isVerified2fa` | bool | no |if `true` 2fa has verified , only for web login |
   
 
   #### Response
