@@ -153,7 +153,7 @@ The Response body contains data with the following
 ``` -->
 
 
-### Verify the 2FA Code of Partner User
+<!-- ### Verify the 2FA Code of Partner User
 `POST /partnerloginapi/endlogin`
 
 #### Parameters
@@ -176,7 +176,7 @@ The Response body contains data with the following
    "result": "success",
    "jwtToken":"sdfasdf3452t4werrtewr"
 }
-```
+``` -->
 
 ### Agent Login 
 `POST /global/jwtToken/login`
@@ -280,7 +280,7 @@ HTTP/1.1 400 OK
 }
 ```
 
-### Get A 2fa Secret Key of Partner User
+<!-- ### Get A 2fa Secret Key of Partner User
 `GET /partnerglobalapi/2faSecret`
 
 #### Parameters
@@ -441,7 +441,7 @@ The Response body contains data with the following
 {
    "code": "DQ6EXYKLD4TTJ7DY",
 }
-```
+``` -->
 
 <!-- ### Delete the Backup Code of Partner User
 `DELETE /partnerglobalapi/user/{id}/2faBackupCode`
@@ -460,7 +460,7 @@ The Response body contains data with the following
   Content-Type: application/json
 ``` -->
 
-### Get A 2fa Secret Key of Agent
+<!-- ### Get A 2fa Secret Key of Agent
 `GET /partnerglobalapi/2faSecret`
 
 #### Parameters
@@ -646,4 +646,4 @@ The Response body contains data with the following
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
-```
+``` -->
