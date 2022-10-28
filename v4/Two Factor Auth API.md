@@ -509,7 +509,6 @@ The Response body contains data with the following
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  |`type` |string |Yes| `login`,`profile` |
   |`secretKey` |string |Yes| 2FA secret key |
   | `code` | string | yes |  2FA code or backup code| 
   
@@ -517,17 +516,18 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-  |`errcode` |int |Yes| 0 for success |
-  |`message` |string |Yes|    |
-  | `jwtToken` | string | no |  jwt token for logining | 
+  |`secretKey` |string |Yes| 2FA secret key |
+  |`error` |string |no| `code verify failed`,`secretKey have exited` |
+  |`message` |string |no| |
 ```Json 
   HTTP/1.1 200 OK
-  Content-Type: application/json
-{
-   "errcode": 0,
-   "message":"success",
-   "jwtToken":"asdfasdf345345wfwerwe"
-}
+  
+ 
+  HTTP/1.1 400 OK
+  {
+     "error": "code verify failed",
+     "message":"code verify failed",
+  }
 ```
 
 ### Update the 2fa config of Agent
@@ -543,16 +543,17 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-  |`errcode` |int |Yes| 0 for success |
+  |`error` |int |Yes|`code verify failed`  |
   |`message` |string |Yes|    |
   
 ```Json 
   HTTP/1.1 200 OK
-  Content-Type: application/json
-{
-   "errcode": 0,
-   "message":"success",
-}
+  
+  HTTP/1.1 400 OK
+  {
+     "error": "code verify failed",
+     "message":"code verify failed",
+  }
 ```
 
 ### Delete the 2fa of agent
@@ -643,5 +644,5 @@ The Response body contains data with the following
 |`code` |string |Yes| 2FA Backup Code |
 ```Json 
   HTTP/1.1 200 OK
-  Content-Type: application/json
+
 ``` 
