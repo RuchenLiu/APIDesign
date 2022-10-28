@@ -254,7 +254,7 @@ The Response body contains data with the following
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - | 
-  | `preLoginToken` | string | yes | 2fa jwt token containing agent id |  
+  | `preLoginToken` | string | yes | 2fa jwt token containing agent id,login time |  
   |`secretKey` |string |no| 2FA secret key,when setup secretkey |
   | `code` | string | yes |  2FA code or backup code|  
   | `isSetCookie` | bool | yes | set token to cookie |  
