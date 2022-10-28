@@ -515,8 +515,7 @@ The Response body contains data with the following
 #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
-  | - | - | - | - | 
-  |`secretKey` |string |Yes| 2FA secret key |
+  | - | - | - | - |   
   |`error` |string |no| `code verify failed`,`secretKey have exited` |
   |`message` |string |no| |
 ```Json 
