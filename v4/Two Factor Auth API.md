@@ -263,7 +263,7 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`error` |string |no| `Timeout`,`Number of retries exceeded`，`account locked` |
+|`error` |string |no| `code verify failed`,`Timeout`,`Number of retries exceeded`，`account locked` |
 |`message` |string |no| |
 | `jwtToken` | string | no |  jwt token for logining | 
 ```Json 
