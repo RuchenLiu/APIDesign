@@ -542,7 +542,7 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-  |`error` |int |Yes|`code verify failed`  |
+  |`error` |string |Yes|`code verify failed`  |
   |`message` |string |Yes|    |
   
 ```Json 
