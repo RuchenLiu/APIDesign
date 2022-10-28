@@ -192,6 +192,7 @@ The Response body contains data with the following
   | `isMobile` | bool | no |  |  
   | `ip` | string | no |  | 
   | `isAutoLoginForRegistration` | bool | no |  | 
+  | `2fatime` | datetime | no |the time of 2fa verified , only for web login |
   
 
   #### Response
@@ -202,6 +203,7 @@ The Response body contains data with the following
 |`secretKey` |string |No| 2FA secret key,need when nextStep is isNeed2faSetup|
 |`otpauthUrl` |string |No|  otpauth Url of 2FA,need when nextStep is isNeed2faSetup  |
 |`nextStep` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
+|`isShowSkip2fa` |bool |Yes| if `true` show option skip 2fa |
 |`errCode` |enum |Yes| |
 |`errMessage` |string |No| |
 |`url` |string |No| |
@@ -265,7 +267,7 @@ The Response body contains data with the following
   | - | - | - | - | 
 |`error` |string |no| `code verify failed`,`Timeout`,`Number of retries exceeded`，`account locked` |
 |`message` |string |no| |
-| `jwtToken` | string | no |  jwt token for logining | 
+|`jwtToken` | string | no |  jwt token for logining | 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
