@@ -199,7 +199,7 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`preLoginToken` |string |No| prelogin jwt token,need when nextStep is isNeed2faVerify |
+|`preLoginToken` |string |No| prelogin jwt token containing agent id,login time.need when nextStep is isNeed2faVerify |
 |`secretKey` |string |No| 2FA secret key,need when nextStep is isNeed2faSetup|
 |`otpauthUrl` |string |No|  otpauth Url of 2FA,need when nextStep is isNeed2faSetup  |
 |`nextStep` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
