@@ -254,7 +254,7 @@ The Response body contains data with the following
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - | 
-  | `2faToken` | string | yes | 2fa jwt token containing agent id |  
+  | `preLoginToken` | string | yes | 2fa jwt token containing agent id |  
   |`secretKey` |string |no| 2FA secret key,when setup secretkey |
   | `code` | string | yes |  2FA code or backup code|  
   | `isSetCookie` | bool | yes | set token to cookie |  
@@ -263,7 +263,7 @@ The Response body contains data with the following
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`error` |string |no| `Timeout`,`times out of limit`，`account locked` |
+|`error` |string |no| `Timeout`,`Number of retries exceeded`，`account locked` |
 |`message` |string |no| |
 | `jwtToken` | string | no |  jwt token for logining | 
 ```Json 
