@@ -258,7 +258,7 @@ The Response body contains data with the following
   |`secretKey` |string |no| 2FA secret key,when setup secretkey |
   | `code` | string | yes |  2FA code or backup code|  
   | `isSetCookie` | bool | yes | set token to cookie |  
-
+  | `isSKip2fa` | bool | yes |if `true` Don't ask again on this computer for 14 days | 
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
