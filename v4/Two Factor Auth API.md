@@ -460,8 +460,8 @@ The Response body contains data with the following
   Content-Type: application/json
 ``` -->
 
-<!-- ### Get A 2fa Secret Key of Agent
-`GET /partnerglobalapi/2faSecret`
+ ### Get A 2fa Secret Key of Agent
+`GET /global/2faSecret`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -483,7 +483,7 @@ The Response body contains data with the following
 ```
 
 ### Get the 2fa config of Agent
-`GET /partnerglobalapi/2faConfig`
+`GET /global/2faConfig`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -504,12 +504,11 @@ The Response body contains data with the following
 ```
 
 ### Create A 2fa config of Agent
-`POST /partnerglobalapi/2faConfig`
+`POST /global/2faConfig`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `token` | string | yes |  token containing agent id |
   |`type` |string |Yes| `login`,`profile` |
   |`secretKey` |string |Yes| 2FA secret key |
   | `code` | string | yes |  2FA code or backup code| 
@@ -532,12 +531,11 @@ The Response body contains data with the following
 ```
 
 ### Update the 2fa config of Agent
-`POST /partnerglobalapi/2faConfig`
+`POST /global/2faConfig`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
-  | `token` | string | yes |  token containing agent id |
   |`secretKey` |string |Yes| 2FA secret key |
   | `code` | string | yes |  2FA code or backup code| 
   
@@ -558,7 +556,7 @@ The Response body contains data with the following
 ```
 
 ### Delete the 2fa of agent
-`Delete /partnerglobalapi/2faConfig`
+`Delete /global/2faConfig`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -573,7 +571,7 @@ The Response body contains data with the following
 ```
 
 ### Create A Backup Code of Agent
-`POST /partnerglobalapi/2faBackupCode`
+`POST /global/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -592,7 +590,7 @@ The Response body contains data with the following
 }
 ```
 ### Get the Backup Code of Agent
-`GET /partnerglobalapi/2faBackupCode`
+`GET /global/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -612,7 +610,7 @@ The Response body contains data with the following
 ```
 
 ### Update the Backup Code of Agent
-`UPDATE /partnerglobalapi/2faBackupCode`
+`UPDATE /global/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -632,7 +630,7 @@ The Response body contains data with the following
 ```
 
 ### Delete the Backup Code of Agent
-`DELETE /partnerglobalapi/2faBackupCode`
+`DELETE /global/2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -646,4 +644,4 @@ The Response body contains data with the following
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
-``` -->
+``` 
