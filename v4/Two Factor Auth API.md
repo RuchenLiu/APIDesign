@@ -267,11 +267,13 @@ The Response body contains data with the following
   | - | - | - | - | 
 |`error` |string |no| `code verify failed`,`Timeout`,`Number of retries exceeded`，`account locked` |
 |`message` |string |no| |
+| `Verifiedtoken` | string | no |Verified token containing `2fa verified time`|
 |`jwtToken` | string | no |  jwt token for logining | 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
 {
+   "Verifiedtoken":"sdfasdf3452tsdfsd4werrtewr"
    "jwtToken":"sdfasdf3452t4werrtewr"
 }
 
