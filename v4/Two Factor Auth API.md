@@ -204,8 +204,8 @@ The Response body contains data with the following
 |`otpauthUrl` |string |No|  otpauth Url of 2FA,need when nextStep is isNeed2faSetup  |
 |`nextStep` |enum |Yes| `isNeed2faVerify`,`isNeed2faSetup`,`noNeed` |
 |`isShowSkip2fa` |bool |Yes| if `true` show option skip 2fa |
-|`errCode` |enum |Yes| |
-|`errMessage` |string |No| |
+|`errorCode` |enum |Yes| |
+|`errorMessage` |string |No| |
 |`url` |string |No| |
 |`siteId` |int |Yes| |
 |`agentId` |guid |Yes| |
