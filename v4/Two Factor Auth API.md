@@ -269,6 +269,7 @@ The Response body contains data with the following
 |`message` |string |no| |
 | `Verifiedtoken` | string | no |Verified token containing `2fa verified time`|
 |`jwtToken` | string | no |  jwt token for logining | 
+|`retryRemainingNum` | string | no | 2FA code retry Remaining Number | 
 ```Json 
   HTTP/1.1 200 OK
   Content-Type: application/json
