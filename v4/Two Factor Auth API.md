@@ -17,14 +17,14 @@
   
 ### Global API
 - GET /global/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key-of-agent).
-- GET /global/2faConfig - [Get a 2FA config](#Get-the-2fa-config-of-agent).
-- POST /global/2faConfig - [Create a 2FA config](#create-a-2fa-config-of-agent).
-- UPDATE /global/2faConfig - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
-- DELETE /global/2faConfig - [Delete the 2FA config](#delete-the-2fa-config-of-agent). 
+- GET /global/agent2faConfigs/{agentId} - [Get a 2FA config](#Get-the-2fa-config-of-agent).
+- POST /global/agent2faConfigs - [Create a 2FA config](#create-a-2fa-config-of-agent).
+- UPDATE /global/agent2faConfigs - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
+- DELETE /global/agent2faConfigs/{agentId} - [Delete the 2FA config](#delete-the-2fa-config-of-agent). 
 
-- POST /global/agent2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
-- GET /global/agent2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
-- PUT /global/agent2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
+- POST /global/agent2faBackupCodes - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
+- GET /global/agent2faBackupCodes/{agentId} - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
+- PUT /global/agent2faBackupCodes - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
 
 
 ### Partner Global API
@@ -492,7 +492,7 @@ The Response body contains data with the following
 ```
 
 ### Get the 2fa config of Agent
-`GET /global/2faConfig`
+`GET /global/agent2faConfigs/{agentId}`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -513,7 +513,7 @@ The Response body contains data with the following
 ```
 
 ### Create A 2fa config of Agent
-`POST /global/2faConfig`
+`POST /global/agent2faConfigs`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -539,7 +539,7 @@ The Response body contains data with the following
 ```
 
 ### Update the 2fa config of Agent
-`POST /global/2faConfig`
+`POST /global/agent2faConfigs`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -565,7 +565,7 @@ The Response body contains data with the following
 ```
 
 ### Delete the 2fa of agent
-`Delete /global/2faConfig`
+`Delete /global/agent2faConfigs/{agentId}`
 
 #### Parameters
   | Name | Type | Required  | Description |     
