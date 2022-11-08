@@ -22,9 +22,9 @@
 - UPDATE /global/2faConfig - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
 - DELETE /global/2faConfig - [Delete the 2FA config](#delete-the-2fa-config-of-agent). 
 
-- POST /global/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
-- GET /global/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
-- PUT /global/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
+- POST /global/agent2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
+- GET /global/agent2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
+- PUT /global/agent2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
 
 
 ### Partner Global API
@@ -580,7 +580,7 @@ The Response body contains data with the following
 ```
 
 ### Create A Backup Code of Agent
-`POST /global/2faBackupCode`
+`POST /global/agent2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -599,7 +599,7 @@ The Response body contains data with the following
 }
 ```
 ### Get the Backup Code of Agent
-`GET /global/2faBackupCode`
+`GET /global/agent2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -619,7 +619,7 @@ The Response body contains data with the following
 ```
 
 ### Update the Backup Code of Agent
-`UPDATE /global/2faBackupCode`
+`UPDATE /global/agent2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -639,7 +639,7 @@ The Response body contains data with the following
 ```
 
 ### Delete the Backup Code of Agent
-`DELETE /global/2faBackupCode`
+`DELETE /global/agent2faBackupCode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
