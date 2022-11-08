@@ -28,7 +28,7 @@
 
 
 ### Partner Global API
-POST /partnerglobal/agents/backupcode - [Create a 2FA Backup Code or Update the 2FA Backup Code](#create-or-update-a-backup-code-of-partner-user)
+POST /partnerglobal/agents/2fabackupcode - [Create a 2FA Backup Code or Update the 2FA Backup Code](#create-or-update-a-backup-code-of-partner-user)
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
 <!-- 
 ### Partner Login API
@@ -655,7 +655,7 @@ The Response body contains data with the following
 
 ``` 
 ### Create or update a backup code of partner user
-`Post /partnerglobal/agents/backupcode`
+`Post /partnerglobal/agents/2fabackupcode`
 
 #### Parameters
   | Name | Type | Required  | Description |     
