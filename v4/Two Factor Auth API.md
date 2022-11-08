@@ -25,6 +25,10 @@
 - POST /global/2faBackupCode - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
 - GET /global/2faBackupCode - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
 - PUT /global/2faBackupCode - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
+
+
+### Partner Global API
+POST /partnerglobal/agents/backupcode - [Create a 2FA Backup Code or Update the 2FA Backup Code](#create-a-backup-code-of-partner-user)
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
 <!-- 
 ### Partner Login API
