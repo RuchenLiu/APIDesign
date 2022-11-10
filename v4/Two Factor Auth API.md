@@ -18,19 +18,19 @@
 ### Global API
 - GET /global/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key-of-agent).
 
-#### Agent2faConfig API
+  #### Agent2faConfig API
 - GET /global/agent2faConfigs/{agentId} - [Get a 2FA config](#Get-the-2fa-config-of-agent).
 - GET /global/agent2faConfigs - [Get the list of 2FA configs](#Get-the-list-of-agent-2fa-configs).
 - POST /global/agent2faConfigs - [Create a 2FA config](#create-a-2fa-config-of-agent).
 - UPDATE /global/agent2faConfigs/{agentId} - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
 - DELETE /global/agent2faConfigs/{agentId} - [Delete the 2FA config](#delete-the-2fa-config-of-agent). 
 
-#### Agent2faBackupCode API
+  #### Agent2faBackupCode API
 - POST /global/agent2faBackupCodes - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
 - GET /global/agent2faBackupCodes/{agentId} - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
 - PUT /global/agent2faBackupCodes - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
 
-#### SiteAuthenticationConfig API
+  #### SiteAuthenticationConfig API
 - POST /global/siteAuthenticationConfigs - [Create a site authentication config](#create-a-site-authentication-config).
 - GET /global/siteAuthenticationConfigs/{agentId} - [Get the site authentication config](#get-the-site-authentication-config). 
 - PUT /global/siteAuthenticationConfigs - [Update the site authentication config](#update-the-site-authentication-config). 
@@ -38,12 +38,12 @@
 
 ### Partner Global API
 
-#### Superagent2faConfig API
+  #### Superagent2faConfig API
 - GET /partnerglobal/superagent2faConfigs/{agentId} - [Get a 2FA config](#Get-the-2fa-config-of-agent).
 - POST /partnerglobal/superagent2faConfigs - [Create a 2FA config](#create-a-2fa-config-of-agent).
 - UPDATE /partnerglobal/superagent2faConfigs/{agentId} - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
 - 
-#### Superagent2faBackupCode API
+  #### Superagent2faBackupCode API
 - POST /partnerglobal/superagent2fabackupcodes - [Create a 2FA Backup Code or Update the 2FA Backup Code](#create-or-update-a-backup-code-of-partner-user)
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
 <!-- 
