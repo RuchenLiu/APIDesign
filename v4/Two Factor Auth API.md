@@ -32,7 +32,11 @@
 
 
 ### Partner Global API
-POST /partnerglobal/agents/2fabackupcode - [Create a 2FA Backup Code or Update the 2FA Backup Code](#create-or-update-a-backup-code-of-partner-user)
+- GET /partnerglobal/superagent2faConfigs/{agentId} - [Get a 2FA config](#Get-the-2fa-config-of-agent).
+- POST /partnerglobal/superagent2faConfigs - [Create a 2FA config](#create-a-2fa-config-of-agent).
+- UPDATE /partnerglobal/superagent2faConfigs/{agentId} - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
+
+POST /partnerglobal/superagents/2fabackupcode - [Create a 2FA Backup Code or Update the 2FA Backup Code](#create-or-update-a-backup-code-of-partner-user)
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
 <!-- 
 ### Partner Login API
