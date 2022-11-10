@@ -26,8 +26,7 @@
 - UPDATE /global/agent2faConfigs/{agentId} - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
 <!-- - DELETE /global/agent2faConfigs/{agentId} - [Delete the 2FA config](#delete-the-2fa-config-of-agent).  -->
 
-
-   #### Agent2faBackupCode API
+  #### Agent2faBackupCode API
   
 - POST /global/agent2faBackupCodes - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
 - GET /global/agent2faBackupCodes/{agentId} - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
