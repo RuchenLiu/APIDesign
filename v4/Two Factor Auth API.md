@@ -16,21 +16,21 @@
 
   
 ### Global API
-- GET /global/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key-of-agent).
+- GET /global/2faSecret - [Get a 2FA secret key](#Get-a-2fa-secret-key).
 
 #### Agent2faConfig API
   
-- GET /global/agent2faConfigs/{agentId} - [Get a 2FA config](#Get-the-2fa-config-of-agent).
-- GET /global/agent2faConfigs - [Get the list of 2FA configs](#Get-the-list-of-agent-2fa-configs).
-- POST /global/agent2faConfigs - [Create a 2FA config](#create-a-2fa-config-of-agent).
-- UPDATE /global/agent2faConfigs/{agentId} - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
+- GET /global/agent2faConfigs/{agentId} - [Get a Agent 2FA config](#Get-the-agent-2fa-config).
+- GET /global/agent2faConfigs - [Get the list of Agent 2FA configs](#Get-the-list-of-agent-2fa-configs).
+- POST /global/agent2faConfigs - [Create a Agent 2FA config](#create-a-2fa-agent-config).
+- UPDATE /global/agent2faConfigs/{agentId} - [Update the Agent 2FA config](#Update-the-agent-2fa-config). 
 <!-- - DELETE /global/agent2faConfigs/{agentId} - [Delete the 2FA config](#delete-the-2fa-config-of-agent).  -->
 
 #### Agent2faBackupCode API
   
-- POST /global/agent2faBackupCodes:generate - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
-<!-- - GET /global/agent2faBackupCodes/{agentId} - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
-- PUT /global/agent2faBackupCodes - [Update the 2FA Backup Code](#update-the-backup-code-of-agent).  -->
+- POST /global/agent2faBackupCodes:generate - [Generate a Agent 2FA Backup Code](#Generate-a-agent-2fa-backup-code).
+<!-- - GET /global/agent2faBackupCodes/{agentId} - [Get the Agent 2FA Backup Code](#get-the-backup-code-of-agent). 
+- PUT /global/agent2faBackupCodes - [Update the Agent 2FA Backup Code](#update-the-backup-code-of-agent).  -->
 
 #### SiteAuthenticationConfig API
   
@@ -43,14 +43,14 @@
 
 #### Superagent2faConfig API
   
-- GET /partnerglobal/superagent2faConfigs/{agentId} - [Get a 2FA config](#Get-the-2fa-config-of-agent).
-- GET /partnerglobal/superagent2faConfigs - [Get the list of super agent 2FA configs](#Get-the-list-of-super-agent-2fa-configs).
-- POST /partnerglobal/superagent2faConfigs - [Create a 2FA config](#create-a-2fa-config-of-agent).
-- UPDATE /partnerglobal/superagent2faConfigs/{agentId} - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
+- GET /partnerglobal/superagent2faConfigs/{agentId} - [Get the Super Agent 2FA config](#Get-the-super-agent-2fa-config).
+- GET /partnerglobal/superagent2faConfigs - [Get the list of Super Agent 2FA configs](#Get-the-list-of-super-agent-2fa-configs).
+- POST /partnerglobal/superagent2faConfigs - [Create a Super Agent 2FA config](#create-a-super-agent-2fa-config).
+- UPDATE /partnerglobal/superagent2faConfigs/{agentId} - [Update the Super Agent 2FA config](#Update-the-super-agent-2fa-config). 
 
 #### Superagent2faBackupCode API
   
-- POST /partnerglobal/superagent2fabackupcodes:generate - [Create a 2FA Backup Code or Update the 2FA Backup Code](#create-or-update-a-backup-code-of-partner-user)
+- POST /partnerglobal/superagent2fabackupcodes:generate - [Generate a Super agent 2FA Backup Code](#generate-a-super-agent-2fa-backup-code)
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
 <!-- 
 ### Partner Login API
@@ -491,7 +491,7 @@ The Response body contains data with the following
   Content-Type: application/json
 ``` -->
 
- ### Get A 2fa Secret Key of Agent
+ ### Get a 2fa Secret Key
 `GET /global/2faSecret`
 
 #### Parameters
@@ -513,7 +513,7 @@ The Response body contains data with the following
 }
 ```
 
-### Get the 2fa config of Agent
+### Get the Agent 2fa config
 `GET /global/agent2faConfigs/{agentId}`
 
 #### Parameters
@@ -558,7 +558,7 @@ The Response body contains data with the following
 ]
 ```
 
-### Create A 2fa config of Agent
+### Create A Agent 2fa config
 `POST /global/agent2faConfigs`
 
 #### Parameters
@@ -584,7 +584,7 @@ The Response body contains data with the following
   }
 ```
 
-### Update the 2fa config of Agent
+### Update the Agent 2fa config
 `Put /global/agent2faConfigs/{agentId}`
 
 #### Parameters
@@ -610,7 +610,7 @@ The Response body contains data with the following
   }
 ```
 
-### Delete the 2fa of agent
+<!-- ### Delete the 2fa of agent
 `Delete /global/agent2faConfigs/{agentId}`
 
 #### Parameters
@@ -623,14 +623,15 @@ The Response body contains data with the following
   | - | - | - | - | 
 ```Json 
   HTTP/1.1 200 OK
-```
+``` -->
 
-### Create A Backup Code of Agent
+### Generate A Agent 2fa Backup Code
 `POST /global/agent2faBackupCode:generate`
 
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
+  | agentId | int | yes | agent Id | 
   
   #### Response
 The Response body contains data with the following 
@@ -644,7 +645,7 @@ The Response body contains data with the following
    "code": "DQ6EXYKLD4TTJ7DY",
 }
 ```
-### Get the Backup Code of Agent
+### Get the Agent 2fa Backup Code
 `GET /global/agent2faBackupCode`
 
 #### Parameters
@@ -664,7 +665,7 @@ The Response body contains data with the following
 }
 ```
 
-### Update the Backup Code of Agent
+### Update the Agent 2fa Backup Code
 `UPDATE /global/agent2faBackupCode`
 
 #### Parameters
@@ -684,7 +685,7 @@ The Response body contains data with the following
 }
 ```
 
-### Delete the Backup Code of Agent
+### Delete the Agent 2fa Backup Code
 `DELETE /global/agent2faBackupCode`
 
 #### Parameters
@@ -770,7 +771,7 @@ The Response body contains data with the following
 ```
 
 
-### Create or update a backup code of partner user
+### Generate a Super Agent 2fa backup code
 `Post /partnerglobal/superagents2fabackupcodes:generate`
 
 #### Parameters
