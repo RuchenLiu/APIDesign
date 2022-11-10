@@ -771,7 +771,7 @@ The Response body contains data with the following
 ```
 
 ### Get the Super Agent 2fa config
-`GET /global/agent2faConfigs/{superagentId}`
+`GET /partnerglobal/superagent2faConfigs/{superagentId}`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -793,7 +793,7 @@ The Response body contains data with the following
 ```
 
 ### Get the list of Super agent 2fa configs
-`GET /partnerglobal/agent2faConfigs`
+`GET /partnerglobal/superagent2faConfigs`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -819,7 +819,7 @@ The Response body contains data with the following
 ```
 
 ### Create A Super Agent 2fa config
-`POST /partnerglobal/agent2faConfigs`
+`POST /partnerglobal/superagent2faConfigs`
 
 #### Parameters
   | Name | Type | Required  | Description |     
