@@ -777,8 +777,8 @@ The Response body contains data with the following
 #### Parameters
   | Name | Type | Required  | Description |     
   | - | - | - | - |
-  |`siteId` | int | yes |  site Id |
-  |`agentId` |int |Yes| agent Id |
+  |`partnerId` | int | yes |  partnerId |
+  |`superAgentId` |int |Yes| superAgentId |
   
   #### Response
 The Response body contains data with the following 
