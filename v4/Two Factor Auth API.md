@@ -25,7 +25,7 @@
 - POST /global/agent2faBackupCodes - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
 - GET /global/agent2faBackupCodes/{agentId} - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
 - PUT /global/agent2faBackupCodes - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
--
+
 - POST /global/siteAuthenticationConfigs - [Create a site authentication config](#create-a-site-authentication-config).
 - GET /global/siteAuthenticationConfigs/{agentId} - [Get the site authentication config](#get-the-site-authentication-config). 
 - PUT /global/siteAuthenticationConfigs - [Update the site authentication config](#update-the-site-authentication-config). 
