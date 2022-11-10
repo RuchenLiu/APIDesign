@@ -770,6 +770,105 @@ The Response body contains data with the following
 }
 ```
 
+### Get the Super Agent 2fa config
+`GET /global/agent2faConfigs/{superagentId}`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  |superagentId | int | yes | superagentId |  
+    
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  |`id` |string |Yes| 2FA config Id |
+
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+   "id": "DQ6EXYKLD4TTJ7DY",
+}
+```
+
+### Get the list of Super agent 2fa configs
+`GET /partnerglobal/agent2faConfigs`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | partnerId | int | yes | partnerId|  
+    
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  |`id` |string |Yes| 2FA config Id |
+  |`superagentid` |string |Yes| superagentid |
+  
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+[
+  {
+     "id": "DQ6EXYKLD4TTJ7DY",
+     "superagentid":"324234",
+  }
+]
+```
+
+### Create A Super Agent 2fa config
+`POST /partnerglobal/agent2faConfigs`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  |`secretKey` |string |Yes| 2FA secret key |
+  | `code` | string | yes |  2FA code or backup code| 
+  
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - |   
+  |`error` |string |no| `code verify failed`,`secretKey have exited` |
+  |`message` |string |no| |
+```Json 
+  HTTP/1.1 200 OK
+  
+ 
+  HTTP/1.1 400 OK
+  {
+     "error": "code verify failed",
+     "message":"code verify failed",
+  }
+```
+
+### Update the Super Agent 2fa config
+`Put /partnerglobal/superagent2faConfigs/{superagentId}`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  |`secretKey` |string |Yes| 2FA secret key |
+  | `code` | string | yes |  2FA code or backup code| 
+  
+#### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  |`error` |string |Yes|`code verify failed`  |
+  |`message` |string |Yes|    |
+  
+```Json 
+  HTTP/1.1 200 OK
+  
+  HTTP/1.1 400 OK
+  {
+     "error": "code verify failed",
+     "message":"code verify failed",
+  }
+```
 
 ### Generate a Super Agent 2fa backup code
 `Post /partnerglobal/superagents2fabackupcodes:generate`
