@@ -25,6 +25,10 @@
 - POST /global/agent2faBackupCodes - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
 - GET /global/agent2faBackupCodes/{agentId} - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
 - PUT /global/agent2faBackupCodes - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
+-
+- POST /global/siteAuthenticationConfigs - [Create a site authentication config](#create-a-site-authentication-config).
+- GET /global/siteAuthenticationConfigs/{agentId} - [Get the site authentication config](#get-the-site-authentication-config). 
+- PUT /global/siteAuthenticationConfigs - [Update the site authentication config](#update-the-site-authentication-config). 
 
 
 ### Partner Global API
@@ -645,15 +649,85 @@ The Response body contains data with the following
   | Name | Type | Required  | Description |     
   | - | - | - | - |  
   
+  
   #### Response
 The Response body contains data with the following 
   | Name  | Type | Required  | Description |     
   | - | - | - | - | 
-|`code` |string |Yes| 2FA Backup Code |
+  |`code` |string |Yes| 2FA Backup Code |
 ```Json 
   HTTP/1.1 200 OK
 
 ``` 
+
+### Create a site authentication config
+`POST /global/siteAuthenticationConfigs`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `2FARequirement` | int | yes |  0: Every login,1: Allow to skip in trusted devices for 14 days. |
+  
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  | `siteId` | int | yes |  site Id |
+  | `2FARequirement` | int | yes |  0: Every login,1: Allow to skip in trusted devices for 14 days. |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+  "siteId":10000,
+  "2FARequirement":1
+}
+```
+### Get the site authentication config
+`Get /global/siteAuthenticationConfigs/{siteId}`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |    
+  
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  | `siteId` | int | yes |  site Id |
+  | `2FARequirement` | int | yes |  0: Every login,1: Allow to skip in trusted devices for 14 days. |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+  "siteId":10000,
+  "2FARequirement":1
+}
+```
+
+### Update the site authentication config
+`Put /global/siteAuthenticationConfigs`
+
+#### Parameters
+  | Name | Type | Required  | Description |     
+  | - | - | - | - |  
+  | `2FARequirement` | int | yes |  0: Every login,1: Allow to skip in trusted devices for 14 days. |
+  
+  #### Response
+The Response body contains data with the following 
+  | Name  | Type | Required  | Description |     
+  | - | - | - | - | 
+  | `siteId` | int | yes |  site Id |
+  | `2FARequirement` | int | yes |  0: Every login,1: Allow to skip in trusted devices for 14 days. |
+```Json 
+  HTTP/1.1 200 OK
+  Content-Type: application/json
+{
+  "siteId":10000,
+  "2FARequirement":1
+}
+```
+
+
 ### Create or update a backup code of partner user
 `Post /partnerglobal/agents/2fabackupcode`
 
