@@ -28,7 +28,7 @@
 
   #### Agent2faBackupCode API
   
-- POST /global/agent2faBackupCodes - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
+- POST /global/agent2faBackupCodes:generate - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
 <!-- - GET /global/agent2faBackupCodes/{agentId} - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
 - PUT /global/agent2faBackupCodes - [Update the 2FA Backup Code](#update-the-backup-code-of-agent).  -->
 
@@ -44,12 +44,13 @@
   #### Superagent2faConfig API
   
 - GET /partnerglobal/superagent2faConfigs/{agentId} - [Get a 2FA config](#Get-the-2fa-config-of-agent).
+- GET /partnerglobal/superagent2faConfigs - [Get the list of super agent 2FA configs](#Get-the-list-of-super-agent-2fa-configs).
 - POST /partnerglobal/superagent2faConfigs - [Create a 2FA config](#create-a-2fa-config-of-agent).
 - UPDATE /partnerglobal/superagent2faConfigs/{agentId} - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
 
   #### Superagent2faBackupCode API
   
-- POST /partnerglobal/superagent2fabackupcodes - [Create a 2FA Backup Code or Update the 2FA Backup Code](#create-or-update-a-backup-code-of-partner-user)
+- POST /partnerglobal/superagent2fabackupcodes:generate - [Create a 2FA Backup Code or Update the 2FA Backup Code](#create-or-update-a-backup-code-of-partner-user)
 <!-- - DELETE /partnerglobal/2faBackupCode - [Delete the 2FA Backup Code](#delete-the-backup-code-of-agent).     -->
 <!-- 
 ### Partner Login API
@@ -625,7 +626,7 @@ The Response body contains data with the following
 ```
 
 ### Create A Backup Code of Agent
-`POST /global/agent2faBackupCode`
+`POST /global/agent2faBackupCode:generate`
 
 #### Parameters
   | Name | Type | Required  | Description |     
@@ -770,7 +771,7 @@ The Response body contains data with the following
 
 
 ### Create or update a backup code of partner user
-`Post /partnerglobal/agents/2fabackupcode`
+`Post /partnerglobal/superagents2fabackupcodes:generate`
 
 #### Parameters
   | Name | Type | Required  | Description |     
