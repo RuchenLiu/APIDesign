@@ -22,9 +22,11 @@
 - UPDATE /global/agent2faConfigs/{agentId} - [Update the 2FA config](#Update-the-2fa-config-of-agent). 
 - DELETE /global/agent2faConfigs/{agentId} - [Delete the 2FA config](#delete-the-2fa-config-of-agent). 
 
+
 - POST /global/agent2faBackupCodes - [Create a 2FA Backup Code](#create-a-backup-code-of-agent).
 - GET /global/agent2faBackupCodes/{agentId} - [Get the 2FA Backup Code](#get-the-backup-code-of-agent). 
 - PUT /global/agent2faBackupCodes - [Update the 2FA Backup Code](#update-the-backup-code-of-agent). 
+
 
 - POST /global/siteAuthenticationConfigs - [Create a site authentication config](#create-a-site-authentication-config).
 - GET /global/siteAuthenticationConfigs/{agentId} - [Get the site authentication config](#get-the-site-authentication-config). 
