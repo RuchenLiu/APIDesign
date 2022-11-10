@@ -513,7 +513,7 @@ The Response body contains data with the following
 }
 ```
 
-### Get the Agent 2fa config
+### Get a Agent 2fa config
 `GET /global/agent2faConfigs/{agentId}`
 
 #### Parameters
