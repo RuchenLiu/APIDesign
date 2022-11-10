@@ -43,10 +43,10 @@
 
 #### Superagent2faConfig API
   
-- GET /partnerglobal/superagent2faConfigs/{agentId} - [Get the Super Agent 2FA config](#Get-the-super-agent-2fa-config).
+- GET /partnerglobal/superagent2faConfigs/{superagentId} - [Get the Super Agent 2FA config](#Get-the-super-agent-2fa-config).
 - GET /partnerglobal/superagent2faConfigs - [Get the list of Super Agent 2FA configs](#Get-the-list-of-super-agent-2fa-configs).
 - POST /partnerglobal/superagent2faConfigs - [Create a Super Agent 2FA config](#create-a-super-agent-2fa-config).
-- UPDATE /partnerglobal/superagent2faConfigs/{agentId} - [Update the Super Agent 2FA config](#Update-the-super-agent-2fa-config). 
+- UPDATE /partnerglobal/superagent2faConfigs/{superagentId} - [Update the Super Agent 2FA config](#Update-the-super-agent-2fa-config). 
 
 #### Superagent2faBackupCode API
   
